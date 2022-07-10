@@ -1,0 +1,10 @@
+__pycache__
+.idea
+venv
+logs/*
+orders
+
+providers.tf
+*.tfstate*
+.terraform*
+ssh_key*

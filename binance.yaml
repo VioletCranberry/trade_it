@@ -1,0 +1,39 @@
+binance_client:
+  key: 
+  secret: 
+  test_net: False
+  test_buy: False
+
+market:
+
+  - order_tmp_folder: "./orders/btc_usdt_by_30_minutes"
+    settings:
+      symbols: "BTCUSDT"
+      base_asset: "USDT"
+      trade_quantity: 0.00128
+      for_each: "30m"
+      duration: "7d"
+    trade:
+      method: "TradeByLastRow"
+      strategy: "DoubleDemaCross"
+      params:
+        dema_period_long: 20
+        dema_period_short: 9
+    async:
+      sleep_seconds: 10
+
+  - order_tmp_folder: "./orders/btc_usdt_by_1_hour"
+    settings:
+      symbols: "BTCUSDT"
+      base_asset: "USDT"
+      trade_quantity: 0.00128
+      for_each: "1h"
+      duration: "14d"
+    trade:
+      method: "TradeByLastRow"
+      strategy: "DoubleDemaCross"
+      params:
+        dema_period_long: 20
+        dema_period_short: 9
+    async:
+      sleep_seconds: 30
